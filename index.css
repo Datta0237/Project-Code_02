@@ -8,7 +8,7 @@
 }
 .imgwrapper{
     width: 100%;
-    animation: slide 10s infinite;
+    animation: slide 5s infinite;
     border: 1px solid blue;
     
 }
