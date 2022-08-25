@@ -7,42 +7,50 @@
     
 }
 .imgwrapper{
-    width: 100%;
-    animation: slide 5s infinite;
+    width: 500%;
+    animation: slide 10s infinite;
     border: 1px solid blue;
     
 }
 .imgcontainer{
-    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;font-size: xx-large;
     float: left;
     height: 100vh;
-    width: 100%;
+    width: 20%;
     border: 1px solid yellow;
 }
 .imgcontainer:nth-child(1){
-    background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/shutterstock_324325775_1_1512x.jpg?v=1660337720");
-}
-.imgcontainer:nth-child(2){
-    background-image: url("https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80");
-}
-.imgcontainer:nth-child(3){
     background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/shutterstock_1207523875_1512x.jpg?v=1660338294");
 }
-.imgcontainer:nth-child(4){
+.imgcontainer:nth-child(2){
     background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/shutterstock_773947222_97e3ce6e-89fa-4a0f-a5d5-d0d373ae995e_1512x.jpg?v=1660340662");
 }
+.imgcontainer:nth-child(3){
+    background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/shutterstock_1161591199_1512x.jpg?v=1660339761");
+}
+.imgcontainer:nth-child(4){
+    background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/shutterstock_324325775_1_1512x.jpg?v=1660337720");
+}
 .imgcontainer:nth-child(5){
-    background-image: url("https://www.indiadivine.org/wp-content/uploads/2015/10/Lord-Dattatreya.jpg");
+    background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/shutterstock_1464509732_1_e307f109-5b85-417e-93c7-9420d8804949_1512x.jpg?v=1660343364");
 }
 .imgcontainer:nth-child(6){
-    background-image: url("https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80");
+    background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/shutterstock_390723769_4_7_1512x.jpg?v=1660348351");
 }
+
 @keyframes slide {
     20% {margin-left: 0px;}
-    30% {margin-left: -728px;}
-    50% {margin-left: -728px;}
-    60% {margin-left: -1456px;}
-    70% {margin-left: -1456px;}
-    80% {margin-left: -2184px;}
-    90% {margin-left: -2184px;}
+    30% {margin-left: -100%;}
+    50% {margin-left: -100%;}
+    60% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    80% {margin-left: -300%;}
+    90% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+    110% {margin-left: -300%;}
 }

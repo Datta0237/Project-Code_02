@@ -25,6 +25,15 @@ input{
     padding: 10px;
     border: 0ch;
 }
-a>img{
+#signimg>img{
     width: 2vw;
+}
+.blackline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 8vh;
+    background-color: black;
+    color: white;
 }
