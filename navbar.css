@@ -25,3 +25,6 @@ input{
     padding: 10px;
     border: 0ch;
 }
+a>img{
+    width: 2vw;
+}
