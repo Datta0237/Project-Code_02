@@ -1,3 +1,98 @@
+*{
+    padding: 0%;
+    box-sizing: border-box;
+}
+#secpage{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;padding: 20px;
+}
+.secimg:nth-child(1){
+    width: 32%;
+    background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/asapimage---533-x-644-px_540x.jpg?v=1650550832");
+   
+}
+.secimg:nth-child(2){
+    width: 32%;
+    background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/WEB_ASSET_2_540x.jpg?v=1650894933");
+}
+
+.secimg:nth-child(3){
+    width: 32%;
+    background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/womens_tops_2_540x.jpg?v=1630508297");
+}
+
+#shopbycategory{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    text-align: center;
+}
+#shopbycategory>div{
+    width: 100%;
+    margin: auto;
+}
+#shopbycategory>div>img{
+    width: 100%;
+}
+#boximg{
+    cursor: pointer;
+}
+#NewArrpro{
+    cursor: pointer;
+}
+#NewArr{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    text-align: center;
+}
+#NewArr>div{
+    width: 100%;
+    margin: auto;
+}
+#NewArr>div>img{
+    width: 100%;
+}
+#NewArrpro{
+    cursor: pointer;
+}
+#trending{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    text-align: center;
+}
+#trending>div{
+    width: 100%;
+    margin: auto;
+}
+#trending>div>img{
+    width: 100%;
+}
+#trendinghead{
+    text-align: center;
+}
+#trendinghead>button{
+    padding: 10px;
+}
+#imgslider2{
+    overflow: hidden;
+    width: 100%;
+    height: 60vh;
+    margin: auto;
+    background-color: black;
+    font-size: 4rem;
+}
+#newarrbtn{
+    text-align: center;
+}
+#newarrbtn>button{
+    padding: 10px;
+}
+
 .imgslider{
     overflow: hidden;
     width: 100%;
@@ -9,20 +104,19 @@
 .imgwrapper{
     width: 500%;
     animation: slide 10s infinite;
-    border: 1px solid blue;
     
 }
+.slidehead{
+    font-size: 05rem;
+    line-height: 05em;
+}
+
 .imgcontainer{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    color: white;font-size: xx-large;
+    color: white;
     float: left;
     height: 100vh;
     width: 20%;
-    border: 1px solid yellow;
 }
 .imgcontainer:nth-child(1){
     background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/shutterstock_1207523875_1512x.jpg?v=1660338294");
@@ -54,3 +148,4 @@
     100% {margin-left: -300%;}
     110% {margin-left: -300%;}
 }
+
