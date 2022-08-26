@@ -25,3 +25,9 @@ h1{
 span{
     text-align: center;
 }
+.bottom{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgb(223, 223, 223);
+}
