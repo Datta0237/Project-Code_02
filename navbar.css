@@ -37,3 +37,26 @@ input{
     background-color: black;
     color: white;
 }
+@media only screen and (max-width: 770px){
+    #secNav{
+        display: none;
+    }
+    #searchbar{
+        display: none;
+    }
+    #clr{
+        display: none;
+    }
+}
+@media only screen and (max-width: 450px) {
+    #secNav{
+        display: none;
+    }
+    #searchbar{
+        display: none;
+    }
+    
+    #signimg{
+        display: none;
+    }
+}
