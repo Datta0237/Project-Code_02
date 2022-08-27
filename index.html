@@ -8,6 +8,7 @@
         – Bluefly</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
     <div class="nav">
@@ -15,7 +16,7 @@
             <a href="index.html"><h1><img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?v=1574278243" alt=""></h1></a>
             <div><img src="https://th.bing.com/th/id/R.aef391a17766dd37e89b36e57e6db3d5?rik=j8%2fl%2f%2bVxAYdMGQ&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2fz%2f1%2fT%2fu%2f9%2f2%2fsearch-icon-th.png&ehk=LTWbqxh17mFAM70LyJ9PVbe9LZb4232yj8JDWDSIQ2Q%3d&risl=&pid=ImgRaw&r=0" alt=""><input type="search" placeholder="SEARCH"></div>
             <div><a id="signimg" href="SignIn.html"><img src="https://cdn-icons-png.flaticon.com/128/2321/2321232.png" alt=""></a></div>
-            <div><img src="https://th.bing.com/th/id/OIP.joTmeoplSSE5C7NIegOMngHaHa?w=215&h=215&c=7&r=0&o=5&pid=1.7" alt=""></div>
+            <div onclick=Showcart() id="signimg"><img src="https://th.bing.com/th/id/OIP.joTmeoplSSE5C7NIegOMngHaHa?w=215&h=215&c=7&r=0&o=5&pid=1.7" alt=""></div>
         </div>
         <div id="secNav">
             <div>CLOTHING</div>
@@ -108,8 +109,26 @@
     
     </div>
     <div style="text-align: center;  background-color: rgb(223, 223, 223);"><img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Untitled_2_.png_5_x104@2x.png?v=1620852820" alt=""><p style="text-align: center;">© 2022 Bluefly 1998-2020 BLUEFLY.COM OR ITS AFFILIATES ALL RIGHTS RESERVED.</p></div>
+
+
+    
+    
+    <div id="cartboxa">
+        <div id="carthead">CART <img id="hide" src="https://cdn.onlinewebfonts.com/svg/img_203054.png" alt=""></div>
+        <hr>
+        <div id="cartproducts"></div>
+        <hr>
+        <div id="checkout">
+            <div id="subtotal"> <div style="font-weight:bolder;">SubTotal</div>  <span id="amount">Total value</span></div>
+            <p>Shipping, taxes, and discounts codes calculated at checkout.</p>
+            <a href="payment.html"><button style="background-color: black; color: white;width: 100%; padding: 15px;">CHECK OUT</button></a>
+            
+        </div>
+    </div>
+
     
     
 </body>
 <script src="index.js"></script>
+<script src="cart.js"></script>
 </html>

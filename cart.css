@@ -1,0 +1,29 @@
+
+#CartBox>img{
+    width: 50%;
+}
+#carthead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#carthead>img{
+    width: 20px;
+    height: 20px;
+}
+#cartboxa{
+    width: 30%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: aliceblue;
+    position: absolute;
+    top: 50px;right: 10px;
+    display: none;
+}
+#checkout{
+    background-color: aliceblue;
+    text-align: center;
+}
+#subtotal{
+    display: flex;
+    justify-content: space-between;
+}

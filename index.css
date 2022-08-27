@@ -110,7 +110,11 @@
     font-size: 05rem;
     line-height: 05em;
 }
-
+#cartbtn{
+    width: 50%;
+    background-color: black; color: white;
+    margin: auto;
+}
 .imgcontainer{
     text-align: center;
     color: white;
