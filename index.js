@@ -1,14 +1,17 @@
+let MyCart= JSON.parse(localStorage.getItem("ProCart")) || [];
+let sum=0;
+
 
     let Data2=[{image:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313381151_RLLZ_1_1800x1800.jpg?v=1661238774",
-    name:"MOCHINO LOGO LEATHER SNEAKER",rate:"$309.99",saving:"Save 24%",link1:"https://www.bluefly.com/collections/women-shoes-sneakers/products/bf-105562489-19wo?id=6939513028740"},
+    name:"MOCHINO LOGO LEATHER SNEAKER",rate:"309.99",saving:"Save 24%",link1:"https://www.bluefly.com/collections/women-shoes-sneakers/products/bf-105562489-19wo?id=6939513028740"},
     {image:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1452115305_RLLZ_1_1800x1800.jpg?v=1661238347",
-    name:"THIA MARIN DRAPPED COCTAIL DRESS",rate:"$309.99",saving:"Save 24%",link1:"https://www.bluefly.com/collections/women-clothing-dresses-cocktail-party-dresses/products/bf-105561083-3z47?id=6939505361028"},
+    name:"THIA MARIN DRAPPED COCTAIL DRESS",rate:"309.99",saving:"Save 24%",link1:"https://www.bluefly.com/collections/women-clothing-dresses-cocktail-party-dresses/products/bf-105561083-3z47?id=6939505361028"},
     {image:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313507843_RLLZ_1_1800x1800.jpg?v=1661238755",
-    name:"JIMMY CHOOD DIAMOND LIGHT MAXI/F LEATHER SNEAKER",rate:"$309.99",saving:"Save 24%",link1:"https://www.bluefly.com/collections/women-shoes-sneakers/products/bf-105561472-srnh?id=6939512602756"},
+    name:"JIMMY CHOOD DIAMOND LIGHT MAXI/F LEATHER SNEAKER",rate:"309.99",saving:"Save 24%",link1:"https://www.bluefly.com/collections/women-shoes-sneakers/products/bf-105561472-srnh?id=6939512602756"},
     {image:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1312401597_RLLZ_1_1800x1800.jpg?v=1661455242",
-    name:"BOTTEGA VENNETA SPEEDSTER LEATHER & MESH SNEAKER ",rate:"$309.99",saving:"Save 24%",link1:"https://www.bluefly.com/collections/men-shoes-sneakers/products/bf-105567862-wgkd?id=6939511586948"},
+    name:"BOTTEGA VENNETA SPEEDSTER LEATHER & MESH SNEAKER ",rate:"309.99",saving:"Save 24%",link1:"https://www.bluefly.com/collections/men-shoes-sneakers/products/bf-105567862-wgkd?id=6939511586948"},
     {image:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313407285_RLLZ_1_1800x1800.jpg?v=1661238661",
-    name:"VALENTINO ROCKSTUD CAGED LEATHER ANKLE",rate:"$309.99",saving:"Save 24%",link1:"https://www.bluefly.com/collections/women-shoes-sandals/products/bf-105577535-4ncw?id=6939510767748"}];
+    name:"VALENTINO ROCKSTUD CAGED LEATHER ANKLE",rate:"309.99",saving:"Save 24%",link1:"https://www.bluefly.com/collections/women-shoes-sandals/products/bf-105577535-4ncw?id=6939510767748"}];
     let Data=[{image:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1411212007_RLLZ_2_large.jpg?v=1661173093",
     name:"DRESSES",link1:"https://www.bluefly.com/collections/women-clothing-dresses"},
     {image:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313382839_RLLZ_2_large.jpg?v=1661153030",
@@ -51,6 +54,7 @@
         Image.src=ele.image;
         let Name=document.createElement("p");
         Name.innerText=ele.name;
+        
         box.append(Image,Name);
         document.getElementById("shopbycategory").append(box);
 
@@ -59,12 +63,12 @@
         }
     })
 
-    Data2.forEach(function(ele){
+    Data2.forEach(function(ele,index){
         let box=document.createElement("div");
         box.setAttribute("id","NewArrpro");
-        box.addEventListener("click",redirected);
         let Image=document.createElement("img");
         Image.src=ele.image;
+        Image.addEventListener("click",redirected);
         let Name=document.createElement("p");
         Name.innerText=ele.name;
         let Rate=document.createElement("p");
@@ -72,12 +76,21 @@
         let Saving=document.createElement("span");
         Saving.innerText=ele.saving;
         Saving.style.color="red";
-        box.append(Image,Name,Rate,Saving);
+        let Cartbtn=document.createElement("button");
+        Cartbtn.innerText="Add to Cart";
+        Cartbtn.addEventListener("click",function(){
+            AddToCart(ele,index);
+            document.getElementById("cartboxa").style.display="block";
+        })
+        Cartbtn.setAttribute("id","cartbtn");
+        box.append(Image,Name,Rate,Saving,Cartbtn);
         document.getElementById("NewArr").append(box);
 
-        function redirected(linkbag){
-            window.location.href=ele.link1;
+        for(let i=0;i<MyCart.length;i++){
+            sum+=Number(ele.rate);
         }
+
+        document.getElementById("amount").innerText=sum;
     })
     Data3.forEach(function(ele){
         let box=document.createElement("div");
@@ -92,12 +105,35 @@
         let Saving=document.createElement("span");
         Saving.innerText=ele.saving;
         Saving.style.color="red";
-        box.append(Image,Name,Rate,Saving);
+        let Cartbtn=document.createElement("button");
+        Cartbtn.innerText="Add to Cart";
+        Cartbtn.addEventListener("click",function(){
+            AddToCart(ele,index);
+            document.getElementById("cartboxa").style.display="block";
+        })
+        Cartbtn.setAttribute("id","cartbtn");
+        box.append(Image,Name,Rate,Saving,Cartbtn);
         document.getElementById("trending").append(box);
 
         function redirected(linkbag){
             window.location.href=ele.link1;
         }
     })
+
+    function AddToCart(ele,index){
+        MyCart.push(ele);
+        localStorage.setItem("ProCart",JSON.stringify(MyCart));
+    }
+
+    document.getElementById("hide").onclick=function(){
+        document.getElementById("cartboxa").style.display="none";
+    } 
+
+    function redirected(linkbag){
+        window.location.href=ele.link1;
+    }
+    function Showcart(){
+        document.getElementById("cartboxa").style.display="block";
+    }
 
     
